@@ -8,13 +8,13 @@ class unicorn {
   this.color = "green";
   this.say = say;
 }
-  changesay(newsay) {
+  changeSay(newsay) {
   this.say = newsay;
   }
 
 }
   var Unicorn1 = new unicorn("Uniballoony");
-  Unicorn1.changesay("*~*");
+  Unicorn1.changeSay("*~*");
     console.log(Unicorn1);
 
 
@@ -30,16 +30,16 @@ class vampire {
   this.pet = "bat"
   this.thirsty = true
 }
-  changethirsty(newthirsty) {
+  changeThirsty(newthirsty) {
       this.thirsty = newthirsty;
     }
-    changepet(newpet){
+    changePet(newpet){
       this.pet = newpet;
     }
 }
   var vampire1 = new vampire("dracula");
-  vampire1.changethirsty(false);
-  vampire1.changepet("dog")
+  vampire1.changeThirsty(false);
+  vampire1.changePet("dog")
   console.log(vampire1);
 
 
@@ -59,7 +59,7 @@ class Dragon {
   this.eat = 1;
   this.isHungry = true;
   }
-  changeeat(neweat) {
+  changEat(neweat) {
       this.eat = neweat;
         if (this.eat >= 4) {
         this.isHungry = false
@@ -68,7 +68,7 @@ class Dragon {
 
 }
   var Dragon1 = new Dragon("gary", "susan", "red" );
-  Dragon1.changeeat(8);
+  Dragon1.changeEat(8);
   console.log(Dragon1);
 
 
@@ -91,27 +91,30 @@ class Hobbit {
     this.age = 0;
     this.isAdult = false;
     this.isOld = false;
-    this.hasRing = true;
-    this.birthday = 0;
+    this.hasRing = false;
   }
-  changeage(newage) {
+  changeAge(newage) {
       this.age = newage;
         if (this.age >= 33) {
         this.isAdult = true
       }
   }
-// Could not figure out how to add the celebrateBirthday method and change the
-// age by one. I'm pretty sure I would use the ++ increment, but I can't figure out
-//the proper syntax.
-  changename(newname) {
+  changeName(newname) {
       this.name = newname;
-        if (this.name !== "Frodo") {
-        this.hasRing = false
+      }
+  hasBirthday() {
+    this.age++
+  }
+  checkForRing() {
+    if (this.name === "Frodo") {
+    this.hasRing = true
       }
   }
-//struggling to figure out how to get hasRing to print false with the name samuel
+
 }
-var Hobbit1 = new Hobbit("frodo", "cheerful");
-  Hobbit1.changeage(35);
-  Hobbit1.changename("samuel");
+var Hobbit1 = new Hobbit("Frodo", "cheerful");
+  Hobbit1.changeAge(35);
+  Hobbit1.changeName("samuel");
+  Hobbit1.hasBirthday();
+  Hobbit1.checkForRing();
     console.log(Hobbit1);
